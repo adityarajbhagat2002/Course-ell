@@ -16,17 +16,21 @@ function Signup() {
 
     return <div>
             <div style={{
-                paddingTop: 150,
-                marginBottom: 10,
+                paddingTop: 100,
                 display: "flex",
-                justifyContent: "center"
+                justifyContent: "center",
+
             }}>
                 <Typography variant={"h6"}>
-                Welcome to Coursera. Sign up below
+                Welcome to Course-ell. Sign up below
                 </Typography>
             </div>
+
+        
+
+
         <div style={{display: "flex", justifyContent: "center"}}>
-            <Card varint={"outlined"} style={{width: 400, padding: 20}}>
+            <Card variant={"outlined"} style={{width: 400, padding: 20}}>
                 <TextField
                     onChange={(event) => {
                         setEmail(event.target.value);

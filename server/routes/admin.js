@@ -4,6 +4,7 @@ const { User, Course, Admin } = require("../db");
 const jwt = require('jsonwebtoken');
 const { SECRET } = require("../middleware/auth")
 const { authenticateJwt } = require("../middleware/auth");
+require('dotenv').config();
 
 const router = express.Router();
 
@@ -54,7 +55,8 @@ router.post('/signup', (req, res) => {
   });
   
   router.put('/courses/:courseId', authenticateJwt, async (req, res) => {
-    const course = await Course.findByIdAndUpdate(req.params.courseId, req.body, { new: true });
+    const {courseId}  =req.params;
+    const course = await Course.findByIdAndUpdate(courseId, req.body, { new: true });
     if (course) {
       res.json({ message: 'Course updated successfully' });
     } else {

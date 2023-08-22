@@ -1,12 +1,12 @@
-import {Typography} from "@mui/material";
+import { Typography } from "@mui/material";
 import Button from "@mui/material/Button";
 import { useNavigate } from "react-router-dom";
 import { isUserLoading } from "../store/selectors/isUserLoading";
-import {useSetRecoilState, useRecoilValue} from "recoil";
+import { useSetRecoilState, useRecoilValue } from "recoil";
 import { userState } from "../store/atoms/user.js";
 import { userEmailState } from "../store/selectors/userEmail"
 
-function Appbar({}) {
+function Appbar({ }) {
     const navigate = useNavigate()
     const userLoading = useRecoilValue(isUserLoading);
     const userEmail = useRecoilValue(userEmailState);
@@ -23,15 +23,15 @@ function Appbar({}) {
             padding: 4,
             zIndex: 1
         }}>
-            <div style={{marginLeft: 10, cursor: "pointer"}} onClick={() => {
+            <div style={{ marginLeft: 10, cursor: "pointer" }} onClick={() => {
                 navigate("/")
             }}>
-                <Typography variant={"h6"}>Coursera</Typography>
+                <Typography variant={"h6"}>Course-ell</Typography>
             </div>
-    
-            <div style={{display: "flex"}}>
-                <div style={{marginRight: 10, display: "flex"}}>
-                <div style={{marginRight: 10}}>
+
+            <div style={{ display: "flex" }}>
+                <div style={{ marginRight: 10, display: "flex" }}>
+                    <div style={{ marginRight: 10 }}>
                         <Button
                             onClick={() => {
                                 navigate("/addcourse")
@@ -39,7 +39,7 @@ function Appbar({}) {
                         >Add course</Button>
                     </div>
 
-                    <div style={{marginRight: 10}}>
+                    <div style={{ marginRight: 10 }}>
                         <Button
                             onClick={() => {
                                 navigate("/courses")
@@ -67,14 +67,14 @@ function Appbar({}) {
             padding: 4,
             zIndex: 1
         }}>
-            <div style={{marginLeft: 10, cursor: "pointer"}} onClick={() => {
+            <div style={{ marginLeft: 10, cursor: "pointer" }} onClick={() => {
                 navigate("/")
             }}>
                 <Typography variant={"h6"}>Coursera</Typography>
             </div>
-    
-            <div style={{display: "flex"}}>
-                <div style={{marginRight: 10}}>
+
+            <div style={{ display: "flex" }}>
+                <div style={{ marginRight: 10 }}>
                     <Button
                         variant={"contained"}
                         onClick={() => {
@@ -82,13 +82,16 @@ function Appbar({}) {
                         }}
                     >Signup</Button>
                 </div>
-                <div>
+
+
+                <div style={{ marginRight: 10 }}>
                     <Button
                         variant={"contained"}
                         onClick={() => {
                             navigate("/signin")
                         }}
                     >Signin</Button>
+
                 </div>
             </div>
         </div>
